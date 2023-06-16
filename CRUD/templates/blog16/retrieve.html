@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>C.R.U.D</title>
+    <style>
+        table {
+            margin-left: 350px;
+            margin-top: 150px;
+            column-width: 20px;
+            font-size: 20px;
+            border: 5px solid black;
+            padding: 5px;
+        }
+ 
+        thead {
+            padding: 10px;
+        }
+ 
+        tbody {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p style="margin-left:550px;"><a href="/">Home</a></p>
+    <div class="container">
+        <table border="5px solid #000;">
+            <tbody>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>City</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in details %}
+                    <tr>
+                        <td style="padding:10px;">{{i.name}}</td>
+                        <td style="padding:10px;">{{i.age}}</td>
+                        <td style="padding:10px;">{{i.address}}</td>
+                        <td style="padding:10px;"><a href="/edit/{{i.id}}">Edit</a></td>
+                        <td style="padding:10px;"><a href="/delete/{{i.id}}">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </tbody>
+
+        </table>
+    </div>
+</body>
+</html>
